@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: go-ingress
+spec:
+  rules:
+  - host: "go.k8s.lawrencetalks.com"
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: go-service
+          servicePort: 80
