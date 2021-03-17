@@ -51,7 +51,7 @@ Then do `terraform init` to initialize terraform. This will pull in the required
 Note: for a first time setup, after doing `terraform apply`, you'll get a `backend.tf` file generated. Please commit this file as this helps with working with the remote state.
 
 ## Deploying The Application
-First go modify `application -> k8s -> ingress.yaml`, chaning the host from `go.k8s.lawrencetalks.com` to a subdomain of your choice as it relates to the zone you selected when creating the infrastructure and then Simply do `kubectl apply` on the `k8s` folder in the application to apply the kubernetes manifest to the cluster
+First go modify `application -> k8s -> ingress.yaml`, changing the host from `go.k8s.lawrencetalks.com` to a subdomain of your choice as it relates to the zone you selected when creating the infrastructure and then Simply do `kubectl apply` on the `k8s` folder in the application to apply the kubernetes manifest to the cluster
 
 ## Proposed CI/CD setup for application
 In order to fully automate the deployment of both application and infrastructure, I would suggest having them both in different repositories, have them run in separate pipelines independent of themselves. For more flexibility, the CI pipeline can use a docker runner with all required tools baked in.
