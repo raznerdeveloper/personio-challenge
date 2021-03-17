@@ -30,7 +30,7 @@ This ensures that whenever we have an application specific ingress with a subdom
 ### null_resources
 This enables us to run regular bash commands as it uses the `local-exec` provisioner.
 ### remote_state
-This enables us to have a synchronized terraform state across members of a team using terraform. Now, team members working with local states can be a problem when everyone has different states of the same infrastructe on their local machines. The remote state module helps mitigate this by creating what's needed to store and lock the terraform state on AWS which are, an s3 bucket and a dynamo db table. How this works is, when someone newly clones the repo, during the initialization process (`terraform init`), if there's a remote state, they'll be asked to use it and once they say yes, they start working with the remote state.
+This enables us to have a synchronized terraform state across members of a team using terraform. Now, team members working with local states can be problematic when everyone has different states of the same infrastructure on their local machines. The remote state module helps mitigate this by creating what's needed to store and lock the terraform state on AWS which are, an s3 bucket and a dynamo db table. How this works is, when someone newly clones the repo, during the initialization process (`terraform init`), if there's a remote state, they'll be asked to use it and once they say yes, they start working with the remote state.
 ### Files
 * The `data` files generally hold data from data sources.
 * The `variables-*` files were created as such so as to be able to make clear what variable is for what. This makes it easier when working with variables in the codebase. 
